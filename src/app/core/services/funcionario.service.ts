@@ -12,7 +12,7 @@ import { Funcionario } from '../models/Funcionario';
     providedIn: 'root'
   })
 export class FuncionarioService {
-    private apiServer = "http://localhost:8080";
+    private apiServer = "https://ferramentariafake.herokuapp.com";
 
     httpOptions = {
       headers: new HttpHeaders({

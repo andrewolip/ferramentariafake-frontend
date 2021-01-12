@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
   })
 export class EmprestimoService {
-    private apiServer = "http://localhost:8080";
+    private apiServer = "https://ferramentariafake.herokuapp.com";
 
     httpOptions = {
       headers: new HttpHeaders({
