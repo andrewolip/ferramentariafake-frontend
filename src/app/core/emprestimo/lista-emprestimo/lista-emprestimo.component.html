@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let emprestimo of emprestimos">
+            <tr [ngIf]="emprestimos" *ngFor="let emprestimo of emprestimos">
                 <td>{{ emprestimo.ferramenta.nome }}</td>
                 <td>{{ emprestimo.funcionario.nome }}</td>
                 <td>{{ emprestimo.dataInicio ? convertDate(emprestimo.dataInicio) : ''}}</td>
@@ -25,6 +25,7 @@
                 <button class="btn-danger" (click)="remover(emprestimo.id)">Remover</button>
                 <button class="btn-success" (click)="devolverFerramenta(emprestimo)" [disabled]="emprestimo.dataEntrega !== null">Devolver</button></td>
             </tr>
+            <h4>Nenhum dado encontrado.</h4>
         </tbody>
     </table>
 </div>

@@ -24,8 +24,8 @@ export class ListaEmprestimoComponent implements OnInit {
     this.spinner.show();
     this.emprestimoService.getAll().subscribe((data: Emprestimo[])=>{
       this.emprestimos = data;
-      this.spinner.hide();
     });
+    this.spinner.hide();
   }
 
   remover(id: number) {
