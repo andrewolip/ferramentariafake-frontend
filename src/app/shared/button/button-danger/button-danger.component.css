@@ -1,0 +1,14 @@
+.btn-danger {
+    background-color: #b51a12;
+    color: #FFF;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px;
+    font-family: "Goldplay Medium";
+    font-size: 15px;
+}
+
+.btn-danger:hover {
+    background-color: #991e1e;
+}

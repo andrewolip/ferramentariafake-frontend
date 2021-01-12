@@ -1,0 +1,29 @@
+<div style="text-align: center; margin: auto;">
+    <h1>Todos os Empréstimos</h1>
+    <button type="button" [routerLink]="['/cadastrar-emprestimo']" routerLinkActive="router-link-active">Solicitar Novo Empréstimo</button>
+    <br/><br/>
+    <table class="styled-table" style="text-align: center; margin: auto;">
+        <thead>
+            <tr>
+                <th>Ferramenta</th>
+                <th>Funcionário</th>
+                <th>Data Início</th>
+                <th>Data Prevista Entrega</th>
+                <th>Data Entrega</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emprestimo of emprestimos">
+                <td>{{ emprestimo.ferramenta.nome }}</td>
+                <td>{{ emprestimo.funcionario.nome }}</td>
+                <td>{{ emprestimo.dataInicio ? convertDate(emprestimo.dataInicio) : ''}}</td>
+                <td>{{ emprestimo.dataPrevistaEntrega ? convertDate(emprestimo.dataPrevistaEntrega) : '' }}</td>
+                <td>{{ emprestimo.dataEntrega ? convertDate(emprestimo.dataEntrega) : '' }}</td>
+                <td><button class="btn-warning" [routerLink]="['/cadastrar-emprestimo/', emprestimo.id]" routerLinkActive="router-link-active">Editar</button>
+                <button class="btn-danger" (click)="remover(emprestimo.id)">Remover</button>
+                <button class="btn-success" (click)="devolverFerramenta(emprestimo)" [disabled]="emprestimo.dataEntrega !== null">Devolver</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

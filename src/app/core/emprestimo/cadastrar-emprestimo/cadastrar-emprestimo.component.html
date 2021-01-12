@@ -1,0 +1,22 @@
+<div style="text-align: center; margin: auto;">
+    <h1>{{ id ? 'Editar' : 'Cadastrar' }} Empréstimo</h1>
+
+    <form (ngSubmit)="submitForm()">
+        <label>Ferramenta: </label>
+        <select [(ngModel)]="emprestimo.ferramenta" name="emprestimo.ferramenta" required>
+            <option value="">Selecione</option>
+            <option *ngFor="let ferramenta of ferramentas" [ngValue]="ferramenta">{{ferramenta.nome}}</option>
+          </select>
+        <br /><br />
+        <label>Funcionário: </label>
+        <select [(ngModel)]="emprestimo.funcionario" name="emprestimo.funcionario" required>
+            <option value="">Selecione</option>
+            <option *ngFor="let funcionario of funcionarios" [ngValue]="funcionario">{{funcionario.nome}}</option>
+          </select>
+          <br /><br />
+        <button class="btn-success">{{ id ? 'Editar' : 'Cadastrar' }}</button>
+
+    </form>
+
+    
+</div>

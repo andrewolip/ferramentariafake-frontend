@@ -1,0 +1,15 @@
+.btn-warning {
+    background-color: #08517a;
+    color: #FFF;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px;
+    font-family: "Goldplay Medium";
+    font-size: 15px;
+}
+
+.btn-warning:hover {
+    background-color: #052c42;
+}
+
