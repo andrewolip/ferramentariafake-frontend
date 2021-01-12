@@ -17,6 +17,7 @@ import { CadastrarFuncionarioComponent } from './core/funcionario/lista-funciona
 import { RouterModule } from '@angular/router';
 import { ButtonWarningComponent } from './shared/button/button-warning/button-warning.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     ButtonWarningComponent
   ],
   imports: [
+    NgxSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

@@ -11,7 +11,7 @@ import { Ferramenta } from '../models/Ferramenta';
     providedIn: 'root'
   })
 export class FerramentaService {
-    private apiServer = "https://ferramentariafake.herokuapp.com";
+    private apiServer = "https://ferramentariafake-frontend.herokuapp.com";
 
     httpOptions = {
       headers: new HttpHeaders({
