@@ -3,7 +3,6 @@ import { Emprestimo } from './../../models/Emprestimo';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-lista-emprestimo',
@@ -14,18 +13,16 @@ export class ListaEmprestimoComponent implements OnInit {
 
   emprestimos: Emprestimo[] = [];
 
-  constructor(private spinner: NgxSpinnerService, private router: Router, public emprestimoService: EmprestimoService) { }
+  constructor(private router: Router, public emprestimoService: EmprestimoService) { }
 
   ngOnInit(): void {
     this.listar();
   }
 
   listar() {
-    this.spinner.show();
     this.emprestimoService.getAll().subscribe((data: Emprestimo[])=>{
       this.emprestimos = data;
     });
-    this.spinner.hide();
   }
 
   remover(id: number) {
